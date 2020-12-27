@@ -19,13 +19,13 @@ class PostSearchType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'placeholder' => "Faites votre recherche ici"
+                    'placeholder' => "Search here"
                 ]
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'label' => false,
-                'placeholder' => 'Choisissez une catégorie'
+                'placeholder' => 'Choose a category'
             ]);
     }
 
