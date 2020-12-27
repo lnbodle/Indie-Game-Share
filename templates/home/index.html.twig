@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Indie Game Share{% endblock %}
+
+{% block body %}
+    <div class="jumbotron text-center text-white bg-primary">
+        <h1>Indie Game Share</h1>
+        <h4>Share your indie game to the world !</h4>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            {{ form_start(form) }}
+            <div class="row" style="margin-left: auto; margin-right: auto;">
+                <div class="col">
+
+                    {{ form_row(form.field) }}
+                </div>
+
+                <div class="col">
+                    {{ form_row(form.category) }}
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Search for a game</button>
+                </div>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+    {% include 'post/posts.html.twig' %}
+{% endblock %}
+
