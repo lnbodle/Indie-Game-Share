@@ -12,6 +12,9 @@
                         <h6> {{ post.category.name }}</h6>
 
                         <p class="card-text"> {{ post.description }} </p>
+                        <a href={{ path("download_post", {id: post.id}) }}>
+                                <button type="submit" class="btn btn-success">Download</button>
+                        </a>
                         <a class="card-text"> Downloads : {{ post.downloads }} </a>
 
                     </div>
@@ -22,9 +25,6 @@
                             </a>
                             <a href={{ path("delete_post", {id: post.id}) }}>
                                 <button type="submit" class="btn btn-danger">Remove</button>
-                            </a>
-                            <a href={{ path("download_post", {id: post.id}) }}>
-                                <button type="submit" class="btn btn-success">Download</button>
                             </a>
                         </div>
                     {% endif %}
