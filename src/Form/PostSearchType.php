@@ -24,6 +24,7 @@ class PostSearchType extends AbstractType
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
+                'required' => false,
                 'label' => false,
                 'placeholder' => 'Choose a category'
             ]);

@@ -35,12 +35,10 @@ class PostRepository extends ServiceEntityRepository
 
     public function findPostsByField($field, $category)
     {
-        $query = $this->createQueryBuilder('a');
-        return $query
-            //->where('a.ownerId = :val')
-            ->andwhere('a.name LIKE :val')
-            ->andWhere('a.category = :category')
-            ->orWhere('a.description LIKE :val')
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.category = :category') 
+            ->andWhere('a.name LIKE :val OR a.description LIKE :val')
+       
             ->setParameter('val', '%' . $field . '%')
             ->setParameter('category', $category)
             ->orderBy('a.name', 'ASC')

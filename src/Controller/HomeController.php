@@ -20,7 +20,7 @@ class HomeController extends AbstractController
         $search = new PostSearch();
         $form = $this->createForm(PostSearchType::class, $search);
         $form->handleRequest($request);
-        if ($search->getField() == '' && $search->getCategory()) {
+        if ($search->getField() == '' && $search->getCategory() == '') {
             $posts = $repository->findAll();
         } else {
             $posts = $repository->findPostsByField($search->getField(), $search->getCategory());
